@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/pageLayout/defaultPageLayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>탑승자 정보입력 페이지</title>
+    <style>
+        td{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+<fieldset>
+    <h2>탑승자 정보입력</h2>
+    <hr/>
+    <table>
+        <tr>
+            <th>카카오 ID</th>
+            <td><input type="text" id="kakaoID" th:value="${session.id}"></td>
+        </tr>
+        <tr>
+            <th>프로필 사진</th>
+            <td><img style="width: 250px; height: auto" th:src="${session.profileImage}"/></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" id="name" th:value="${session.nickname}"></td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td><input type=text id="phoneNumber"/></td>
+        </tr>
+        <tr>
+            <th>E-Mail</th>
+            <td><input type=text id="email" th:value="${session.email}"/></td>
+        </tr>
+        <tr>
+            <th>출발 가능 시간</th>
+            <td><input type="time" id="startTime"/></td>
+        </tr>
+        <tr>
+            <th>출발 장소</th>
+            <td><input type="text" id="startPlace" value=""/></td>
+        </tr>
+    </table>
+
+    <button>입력</button>
+</fieldset>
+</div>
+</body>
+</html>
+
+
